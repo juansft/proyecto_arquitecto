@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder Max</title>
+
+    <!-- Enlazar Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- Estilos responsivos -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Icono de la pestaña -->
+    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos para el botón de Admin */
+        .admin_button .btn {
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .admin_button .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para los botones del carrusel */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #ffcc00;
+            border-radius: 50%;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-prev {
+            left: -50px; /* Ajusta este valor para mover el botón más hacia la izquierda */
+        }
+
+        .carousel-control-next {
+            right: -50px; /* Ajusta este valor para mover el botón más hacia la derecha */
+        }
+
+        /* Estilos para el cuadro del carrusel */
+        .carousel-inner {
+            max-width: 100%;
+            height: 600px; /* Ajusta la altura del carrusel según tus necesidades */
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .banner_taital_main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Top Section -->
+    <div class="header_top_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="header_top_main d-flex justify-content-between align-items-center">
+                        <div class="admin_button">
+                            <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
+                        </div>
+                        <div class="call_text"><a href="#"><i class="fas fa-phone-alt"></i> +57 310 7299131</a></div>
+                        <div class="call_text_2"><a href="#"><i class="far fa-envelope"></i> jesusalejanro@gmail.com</a></div>
+                        <div class="call_text_1"><a href="#"><i class="fas fa-map-marker-alt"></i> Pasto-Colombia</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top Section -->
+
+    <!-- Header Section -->
+    <div class="header_section">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Banner Section -->
+        <div class="banner_section layout_padding">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="banner_taital_main">
+                                        <h1 class="banner_taital">SERVICIOS DE DISEÑO ARQUITECTONICO</h1>
+                                        <p class="banner_text">¡Bienvenido a nuestro estudio de arquitectura, donde transformamos tus sueños en espacios tangibles y funcionales! En nuestro compromiso con la excelencia y la innovación, ofrecemos una amplia gama de servicios diseñados para satisfacer todas tus necesidades arquitectónicas.</p>
+                                        <div class="btn_main">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12"> 
+                                    <div class="banner_taital_main">
+                                        <h1 class="banner_taital">Pasto-Colombia Diseños</h1>
+                                        <p class="banner_text">Operamos en la vibrante ciudad de Pasto, donde fusionamos nuestra pasión por el diseño con años de experiencia en el campo. Desde proyectos residenciales hasta comerciales, hemos dejado nuestra huella en la comunidad, creando espacios innovadores y funcionales que superan las expectativas de nuestros clientes.</p>
+                                        <div class="btn_main">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Aquí puedes añadir más elementos del carrusel si lo necesitas -->
+                </div>
+                <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <!-- End Banner Section -->
+    </div>
+    <!-- End Header Section -->
+
+    <!-- Services Section -->
+    <div class="services_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="services_taital">Nuestros servicios</h1>
+                    <p class="services_text_1">Estos son nuestros servicios que ofrecemos para satisfacer las necesidades del cliente</p>
+                </div>
+            </div>
+            <div id="servicesCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for servicio in servicios %}
+                    {% if forloop.counter0|divisibleby:4 %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="row">
+                    {% endif %}
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main active">
+                                    <div class="service_img">
+                                        {% if servicio.imagen %}
+                                        <img src="{{ servicio.imagen.url }}" class="img-fluid" alt="{{ servicio.nombre }}">
+                                        {% else %}
+                                        <img src="{% static 'images/default-image.png' %}" class="img-fluid" alt="{{ servicio.nombre }}">
+                                        {% endif %}
+                                    </div>
+                                    <h4 class="development_text">{{ servicio.nombre }}</h4>
+                                    <p class="services_text">{{ servicio.descripcion }}</p>
+                                    <div class="readmore_bt"><a href="#" class="btn btn-primary">Read More</a></div>
+                                </div>
+                            </div>
+                    {% if forloop.counter|divisibleby:4 or forloop.last %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#servicesCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#servicesCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Services Section -->
+
+    <!-- Projects Section -->
+    <div class="projects_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="projects_taital">Nuestros proyectos</h1>
+                    <p class="projects_text_1">Estos son algunos de nuestros proyectos realizados</p>
+                </div>
+            </div>
+            <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for proyecto in proyectos %}
+                    {% if forloop.counter0|divisibleby:4 %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="row">
+                    {% endif %}
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="box_main active">
+                                    <div class="project_img">
+                                        {% if proyecto.imagen %}
+                                        <img src="{{ proyecto.imagen.url }}" class="img-fluid" alt="{{ proyecto.nombre }}">
+                                        {% else %}
+                                        <img src="{% static 'images/default-image.png' %}" class="img-fluid" alt="{{ proyecto.nombre }}">
+                                        {% endif %}
+                                    </div>
+                                    <h4 class="development_text">{{ proyecto.nombre }}</h4>
+                                    <p class="projects_text">{{ proyecto.descripcion }}</p>
+                                    <div class="readmore_bt"><a href="#" class="btn btn-primary">Leer más</a></div>
+                                </div>
+                            </div>
+                    {% if forloop.counter|divisibleby:4 or forloop.last %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#projectsCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#projectsCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Projects Section -->
+
+    <!-- Footer Section -->
+    <div class="footer_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="location_text">
+                        <ul>
+                            <li>
+                                <a href="#"><span class="padding_15"><i class="fa fa-mobile" aria-hidden="true"></i></span> <br>Call +01 1234567890</a>
+                            </li>
+                            <li class="active">
+                                <a href="#"><span class="padding_15"><i class="fa fa-envelope" aria-hidden="true"></i></span> <br>demo@gmail.com</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="padding_15"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <br>Location</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_section_2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="useful_text">QUICK LINKS</h2>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="testimonial.html">Testimonial</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="useful_text">Work Portfolio</h2>
+                        <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h2 class="useful_text">SIGN UP TO OUR NEWSLETTER</h2>
+                        <div class="form-group">
+                            <input type="email" class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email">
+                            <div class="subscribe_bt"><button type="submit" class="btn btn-primary">Subscribe</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social_icon">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Section -->
+
+    <!-- Javascript files -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+</body>
+
+</html>
