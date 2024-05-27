@@ -1,0 +1,41 @@
+name: Deploy to Azure
+
+on:
+  push:
+    branches:
+      - main  # Cambia esto si tu rama principal tiene un nombre diferente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Asegúrate de que coincide con la versión de Python de tu proyecto
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Run migrations (si es necesario)
+      run: |
+        source venv/bin/activate
+        python manage.py migrate
+
+    - name: Collect static files
+      run: |
+        source venv/bin/activate
+        python manage.py collectstatic --noinput
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'Arquitecto'  # Reemplaza con el nombre de tu aplicación web en Azure
+        slot-name: 'production'  # Cambia esto si estás usando slots de implementación
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
